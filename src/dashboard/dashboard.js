@@ -197,7 +197,7 @@ function Dashboard(props) {
               possible to create javascript-free accordions. However, they came
               with a downside, smooth opening and closing animations were not
               possible. Many would just use JS to allow animations, but that
-              just defeats the purpose.
+              just defeats the purpose.222222222
               <br />
               <br />
               Thankfully, there <em>is</em> a CSS-only trick to improve the
