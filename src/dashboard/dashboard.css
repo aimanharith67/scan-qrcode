@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@300&display=swap");
+
+body {
+  height: 100%;
+  margin: 30px 55px !important;
+  overflow-x: hidden;
+  background-color: #edeff5 !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* h1,
+p {
+  font-family: "Antonio", sans-serif !important;
+} */
+.wrapper {
+  background-color: #fafbff;
+  border: 1px solid #9c9c9c;
+  border-radius: 6px;
+}
+
+code {
+  padding: 3px;
+  background-color: #d7dde5;
+  color: #1385e3;
+}
+
+.sel {
+  white-space: nowrap;
+  color: #54870d;
+}
+.sel span {
+  color: #dc561e;
+}
+
+/* Accordion Styling */
+
+details summary {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 25px;
+  border-top: 1px solid #d9d9d9;
+  color: #035ee8;
+  font-family: "Antonio", sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  list-style: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.colIII summary span {
+  animation: fun 2s linear infinite;
+}
+
+@keyframes fun {
+  20% {
+    transform: perspective(200px) rotate3d(1, 0, 0, -30deg);
+  }
+  80% {
+    transform: perspective(200px) rotate3d(1, 0, 0, 30deg);
+  }
+}
+
+.fun::before,
+.fun::after {
+  animation: funn 2s infinite;
+}
+
+@keyframes funn {
+  20% {
+    background-color: #e90f0f;
+  }
+  20% {
+    background-color: #fbb102;
+  }
+  60% {
+    background-color: #00a901;
+  }
+  80% {
+    background-color: #1937d4;
+  }
+  100% {
+    background-color: #5906ab;
+  }
+}
+
+/* Chevron Icons */
+
+.chevron::before,
+.chevron::after,
+.chev::before,
+.chev::after {
+  position: absolute;
+  content: "";
+  right: 30px;
+  height: 2px;
+  width: 12px;
+  border-radius: 2px;
+  background-color: #035ee8;
+  transition: transform 0.2s ease-in-out;
+}
+
+.chevron {
+  position: absolute;
+  right: 0;
+  transition: transform 0.2s ease-in-out;
+}
+details[open] .chevron {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease-in-out;
+}
+
+.chevron::before,
+.chev::after {
+  transform: rotate(45deg);
+}
+.chev::before,
+.chevron::after {
+  transform: translateX(7px) rotate(-45deg);
+}
+
+details[open] .chevron::before {
+  transform: rotate(45deg);
+}
+details[open] .chev::before {
+  transform: translateX(7px) rotate(-45deg);
+}
+
+details[open] .chevron::after {
+  transform: translateY(7px) rotate(-45deg);
+}
+details[open] .chev::after {
+  transform: translateY(7px) translateX(7px) rotate(45deg);
+}
+
+/* Style & Animate Siblings */
+
+.content {
+  padding: 0 25px;
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.animate {
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transition-delay: 0s;
+}
+
+details[open] ~ .animate {
+  max-height: 100vh;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transition-delay: 0s;
+}
+
+/* Fold */
+
+.bro::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #edeff5;
+}
+
+.fold {
+  margin-top: -2px;
+  margin-left: -1px;
+  border: solid #9c9c9c;
+  border-width: 0 1px 1px 1px;
+  opacity: 0;
+}
+
+details[open] ~ .fold {
+  background-color: #fafbff;
+  transform-origin: top;
+  animation: fold 0.5s linear forwards;
+}
+
+details[open] ~ .st-fold {
+  animation-delay: 0.1s;
+}
+
+details[open] ~ .nd-fold {
+  animation-delay: 0.5s;
+}
+
+details[open] ~ .rd-fold {
+  animation-delay: 0.8s;
+}
+
+@keyframes fold {
+  from {
+    opacity: 0;
+    transform: perspective(200px) rotate3d(1, 0, 0, -90deg);
+  }
+  55% {
+    opacity: 1;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+button.custom-btn {
+  margin-left: 25px !important;
+  margin-bottom: 25px !important;
+}
+
+.visit {
+  margin-left: 25px;
+}
