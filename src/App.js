@@ -8,6 +8,8 @@ function App() {
   const [scanResultWebCam, setScanResultWebCam] = useState("");
   const [scanResultWebCam2, setScanResultWebCam2] = useState("");
   const [scanResultWebCam3, setScanResultWebCam3] = useState("");
+  const [scanResultWebCam4, setScanResultWebCam4] = useState("");
+  const [scanResultWebCam5, setScanResultWebCam5] = useState("");
   const [numbers, setNumbers] = useState(Number);
 
   return (
@@ -24,6 +26,10 @@ function App() {
               setScanResultWebCam2={setScanResultWebCam2}
               scanResultWebCam3={scanResultWebCam3}
               setScanResultWebCam3={setScanResultWebCam3}
+              scanResultWebCam4={scanResultWebCam4}
+              setScanResultWebCam4={setScanResultWebCam4}
+              scanResultWebCam5={scanResultWebCam5}
+              setScanResultWebCam5={setScanResultWebCam5}
               numbers={numbers}
               setNumbers={setNumbers}
             />
@@ -39,6 +45,10 @@ function App() {
               setScanResultWebCam2={setScanResultWebCam2}
               scanResultWebCam3={scanResultWebCam3}
               setScanResultWebCam3={setScanResultWebCam3}
+              scanResultWebCam4={scanResultWebCam4}
+              setScanResultWebCam4={setScanResultWebCam4}
+              scanResultWebCam5={scanResultWebCam5}
+              setScanResultWebCam5={setScanResultWebCam5}
               numbers={numbers}
               setNumbers={setNumbers}
             />

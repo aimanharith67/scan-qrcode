@@ -47,29 +47,67 @@ function Dashboard(props) {
     console.log("number:", props.numbers);
   };
 
+  const numberHandler4 = (e) => {
+    e.preventDefault();
+    props.setNumbers(4);
+    navigate("/Qrcode");
+    console.log("number:", props.numbers);
+  };
+
+  const numberHandler5 = (e) => {
+    e.preventDefault();
+    props.setNumbers(5);
+    navigate("/Qrcode");
+    console.log("number:", props.numbers);
+  };
+
   const RewardHandler = () => {
     if (
-      props.scanResultWebCam === "booth 1" &&
-      props.scanResultWebCam2 === "booth 1" &&
-      props.scanResultWebCam3 === "booth 1"
+      props.scanResultWebCam === "International Psychology Centre Booth" &&
+      props.scanResultWebCam2 === "Dietetics & Nutrition Services Booth" &&
+      props.scanResultWebCam3 === "Blood Donation Booth" &&
+      props.scanResultWebCam4 === "VR Games Booth" &&
+      props.scanResultWebCam5 === "BookDoc Info Booth"
     ) {
       return handleShow();
     } else if (
       props.scanResultWebCam === "" &&
-      props.scanResultWebCam2 === "booth 1" &&
-      props.scanResultWebCam3 === "booth 1"
+      props.scanResultWebCam2 === "Dietetics & Nutrition Services Booth" &&
+      props.scanResultWebCam3 === "Blood Donation Booth" &&
+      props.scanResultWebCam4 === "VR Games Booth" &&
+      props.scanResultWebCam5 === "BookDoc Info Booth"
     ) {
       return handleShow();
     } else if (
-      props.scanResultWebCam === "booth 1" &&
+      props.scanResultWebCam === "International Psychology Centre Booth" &&
       props.scanResultWebCam2 === "" &&
-      props.scanResultWebCam3 === "booth 1"
+      props.scanResultWebCam3 === "Blood Donation Booth" &&
+      props.scanResultWebCam4 === "VR Games Booth" &&
+      props.scanResultWebCam5 === "BookDoc Info Booth"
     ) {
       return handleShow();
     } else if (
-      props.scanResultWebCam === "booth 1" &&
-      props.scanResultWebCam2 === "booth 1" &&
-      props.scanResultWebCam3 === ""
+      props.scanResultWebCam === "International Psychology Centre Booth" &&
+      props.scanResultWebCam2 === "Dietetics & Nutrition Services Booth" &&
+      props.scanResultWebCam3 === "" &&
+      props.scanResultWebCam4 === "VR Games Booth" &&
+      props.scanResultWebCam5 === "BookDoc Info Booth"
+    ) {
+      return handleShow();
+    } else if (
+      props.scanResultWebCam === "International Psychology Centre Booth" &&
+      props.scanResultWebCam2 === "Dietetics & Nutrition Services Booth" &&
+      props.scanResultWebCam3 === "Blood Donation Booth" &&
+      props.scanResultWebCam4 === "" &&
+      props.scanResultWebCam5 === "BookDoc Info Booth"
+    ) {
+      return handleShow();
+    } else if (
+      props.scanResultWebCam === "International Psychology Centre Booth" &&
+      props.scanResultWebCam2 === "Dietetics & Nutrition Services Booth" &&
+      props.scanResultWebCam3 === "Blood Donation Booth" &&
+      props.scanResultWebCam4 === "VR Games Booth" &&
+      props.scanResultWebCam5 === ""
     ) {
       return handleShow();
     }
@@ -85,8 +123,8 @@ function Dashboard(props) {
       <div>
         <h1>Scan the QR and win rewards!</h1>
         <p>
-          Step: Scan all the QR code provided by the booth to claim amazing
-          rewards from BookDoc!
+          Scan the QR code provided by the booth to claim amazing rewards from
+          BookDoc!
         </p>
       </div>
       <div className="wrapper">
@@ -95,13 +133,14 @@ function Dashboard(props) {
             <summary
               style={{
                 textDecoration:
-                  props.scanResultWebCam != "" && props.scanResultWebCam != null
+                  props.scanResultWebCam ===
+                  "International Psychology Centre Booth"
                     ? "line-through"
                     : "none",
               }}
             >
               {" "}
-              Booth 1
+              International Psychology Centre Booth
               <div className="chevron">
                 <span className="chev"></span>
               </div>
@@ -109,17 +148,16 @@ function Dashboard(props) {
           </details>
           <div className="animate">
             <p className="content">
-              Introduced with HTML 5, the &lt;details&gt; element made it
-              possible to create javascript-free accordions. However, they came
-              with a downside, smooth opening and closing animations were not
-              possible. Many would just use JS to allow animations, but that
-              just defeats the purpose.
-              <br />
-              <br />
-              Thankfully, there <em>is</em> a CSS-only trick to improve the
-              element.
+              At International Psychology Centre Booth, free services
+              consultation includes Adult Counseling, Couple Therapy, Addiction
+              Therapy, Divorce Mediation, Corporate Counseling, Sex Therapy,
+              Child Counseling, Family Therapy, Business / Life Coaching,
+              Educational Therapy, Hypnotherapy, Psycho Nutritional Therapy,
+              Health Counseling, Legal, Sports Counseling, Art Therapy, Mental
+              Health Counseling and Personal Growth
             </p>
-            {props.scanResultWebCam != "" && props.scanResultWebCam != null ? (
+            {props.scanResultWebCam ===
+            "International Psychology Centre Booth" ? (
               <h5 className="visit">Visited</h5>
             ) : (
               <Button
@@ -127,7 +165,7 @@ function Dashboard(props) {
                 // style={{ marginLeft: "25px" }}
                 onClick={numberHandler1}
               >
-                yes
+                Scan QR here
               </Button>
             )}
           </div>
@@ -138,14 +176,14 @@ function Dashboard(props) {
             <summary
               style={{
                 textDecoration:
-                  props.scanResultWebCam2 != "" &&
-                  props.scanResultWebCam2 != null
+                  props.scanResultWebCam2 ===
+                  "Dietetics & Nutrition Services Booth"
                     ? "line-through"
                     : "none",
               }}
             >
               {" "}
-              Booth 2
+              Dietetics & Nutrition Services Booth
               <div className="chevron">
                 <span className="chev"></span>
               </div>
@@ -153,22 +191,19 @@ function Dashboard(props) {
           </details>
           <div className="animate">
             <p className="content">
-              Introduced with HTML 5, the &lt;details&gt; element made it
-              possible to create javascript-free accordions. However, they came
-              with a downside, smooth opening and closing animations were not
-              possible. Many would just use JS to allow animations, but that
-              just defeats the purpose.
-              <br />
-              <br />
-              Thankfully, there <em>is</em> a CSS-only trick to improve the
-              element.
+              Our dietitians provide personalised, practical advice and supports
+              to all in- and out-patients and the community in a professional
+              environment. Our competent diet technicians assisted in monitoring
+              in-patients’ meals especially those on a therapeutic diet by
+              ensuring nutritional therapy is carried out before diet
+              intervention by dieticians is required.
             </p>
-            {props.scanResultWebCam2 != "" &&
-            props.scanResultWebCam2 != null ? (
+            {props.scanResultWebCam2 ===
+            "Dietetics & Nutrition Services Booth" ? (
               <h5 className="visit">Visited</h5>
             ) : (
               <Button className="custom-btn" onClick={numberHandler2}>
-                yes
+                Scan QR here
               </Button>
             )}
           </div>
@@ -178,14 +213,13 @@ function Dashboard(props) {
             <summary
               style={{
                 textDecoration:
-                  props.scanResultWebCam3 != "" &&
-                  props.scanResultWebCam3 != null
+                  props.scanResultWebCam3 === "Blood Donation Booth"
                     ? "line-through"
                     : "none",
               }}
             >
               {" "}
-              Booth 3
+              Blood Donation Booth
               <div className="chevron">
                 <span className="chev"></span>
               </div>
@@ -193,22 +227,83 @@ function Dashboard(props) {
           </details>
           <div className="animate">
             <p className="content">
-              Introduced with HTML 5, the &lt;details&gt; element made it
-              possible to create javascript-free accordions. However, they came
-              with a downside, smooth opening and closing animations were not
-              possible. Many would just use JS to allow animations, but that
-              just defeats the purpose.222222222
-              <br />
-              <br />
-              Thankfully, there <em>is</em> a CSS-only trick to improve the
-              element.
+              One blood donation can save as many as three lives. Sustainable
+              and quality blood services play a critical role in the health of a
+              society and in preparing for, and responding to, disasters. You
+              can make a blood donation at any of the 4 bloodbanks booth or at a
+              community blood donation drive near you!
             </p>
-            {props.scanResultWebCam3 != "" &&
-            props.scanResultWebCam3 != null ? (
+            {props.scanResultWebCam3 === "Blood Donation Booth" ? (
               <h5 className="visit">Visited</h5>
             ) : (
               <Button className="custom-btn" onClick={numberHandler3}>
-                yes
+                Scan QR here
+              </Button>
+            )}
+          </div>
+        </div>
+        <div className="colI">
+          <details>
+            <summary
+              style={{
+                textDecoration:
+                  props.scanResultWebCam4 === "VR Games Booth"
+                    ? "line-through"
+                    : "none",
+              }}
+            >
+              {" "}
+              VR Games Booth
+              <div className="chevron">
+                <span className="chev"></span>
+              </div>
+            </summary>
+          </details>
+          <div className="animate">
+            <p className="content">
+              Walk wirelessly in an open space, Multiplayer option up to 3
+              players, Some experiences include use of VR guns. Choose between
+              15 min & 30 min experiences within your time slot.
+            </p>
+            {props.scanResultWebCam4 === "VR Games Booth" ? (
+              <h5 className="visit">Visited</h5>
+            ) : (
+              <Button className="custom-btn" onClick={numberHandler4}>
+                Scan QR here
+              </Button>
+            )}
+          </div>
+        </div>
+        <div className="colI">
+          <details>
+            <summary
+              style={{
+                textDecoration:
+                  props.scanResultWebCam5 === "BookDoc Info Booth"
+                    ? "line-through"
+                    : "none",
+              }}
+            >
+              {" "}
+              BookDoc Info Booth
+              <div className="chevron">
+                <span className="chev"></span>
+              </div>
+            </summary>
+          </details>
+          <div className="animate">
+            <p className="content">
+              BookDoc, with a presence in 5 countries and 20 cities including
+              Malaysia, Singapore, Indonesia, Hong Kong and Thailand, is an
+              online platform that operates across the healthcare continuum
+              connecting patients to healthcare professionals anytime and
+              anywhere, while incentivising all to stay active.
+            </p>
+            {props.scanResultWebCam5 === "BookDoc Info Booth" ? (
+              <h5 className="visit">Visited</h5>
+            ) : (
+              <Button className="custom-btn" onClick={numberHandler5}>
+                Scan QR here
               </Button>
             )}
           </div>
@@ -221,9 +316,11 @@ function Dashboard(props) {
         keyboard={false}
       >
         <Modal.Header>
-          <Modal.Title>Tahniah</Modal.Title>
+          <Modal.Title>Congratulation!</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Congratulation</Modal.Body>
+        <Modal.Body>
+          You can head to the reward booth to claim your prize.
+        </Modal.Body>
         <Modal.Footer>
           <Button>
             <Link
@@ -231,7 +328,7 @@ function Dashboard(props) {
               to="/"
               onClick={handleClose}
             >
-              Claim Reward
+              OK
             </Link>
           </Button>
         </Modal.Footer>
